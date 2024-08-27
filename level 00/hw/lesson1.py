@@ -1,0 +1,2 @@
+hello = "gamarjoba"
+print(hello)
