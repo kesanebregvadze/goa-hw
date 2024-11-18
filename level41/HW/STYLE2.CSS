@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(1591014095-image-safe-zone-check.webp);
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+p{
+    color: aliceblue;
+}
+.p{
+    color: black;
+}

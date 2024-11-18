@@ -1,0 +1,17 @@
+/* 1) შექმენით, div კლასის სახელი იყოს box
+
+სიგრძე-სიგანე ქონდეს 400px
+ბექგრანდი რა ფერიც გვიდნა
+მარხნივ და მარჯვნინ ქონდეს 10px მომრგვალებთ (brder-radius) 
+
+ბოდერრი ქოდნეს 4 სხვადსხვა ფერის ყველა მხარეზე  */
+.box {
+    height: 400px;
+    width: 400px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-left: 20px solid red;
+    border-right: 20px solid green;
+    border-top: 20px solid gold;
+    border-bottom: 20px solid blue;
+}

@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.bg-img{
+    width: 500px;
+    height: 500px;
+    background-image: url("./assets/photo/image.png");
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    border-radius: 10px; 
+}
