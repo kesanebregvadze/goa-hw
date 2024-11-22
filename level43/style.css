@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Courier New', Courier, monospace ;
+    background-color:lightcoral;
+}
+
+p{
+    color: aliceblue;
+}
+form{
+    margin: 10px;
+    padding: 10px;
+    color: aliceblue;
+}
+label{
+    font-weight: 500;
+}
+input{
+    padding: 10px 15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+
+    font-weight: 500;
+    font-family:"Edu Au Vic WA Nt Pre",cursive;
+    background-color: transparent;
+}
+input[type = "name"]{
+    border: 2px solid lightseagreen;
+    color:blueviolet;
+}
+button[type ="submit"]{
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 2px solid blue;
+    border-radius: 5px;
+    color:aliceblue;
+}
+button[type = "submit"]:hover{
+    background-color: aquamarine;
+    color: aqua;
+}
