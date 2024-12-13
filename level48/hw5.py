@@ -1,12 +1,11 @@
 # შექმენით ფუნქცია, რომელიც მომხმარებელს სთხოვს მიუთითოს 3 საყვარელი სპორტი და შემდეგ შემთხვევითი აირჩევს ერთ მათგანს.
-import random
-list=[]
-def fun():
-    inp=input("შეიყვანე შენი დაყვარრელი სპორტი:")
-    inp2=input("შეიყვანე შენი დაყვარრელი სპორტი:")
-    inp3=input("შეიყვანე შენი დაყვარრელი სპორტი:")
-    list.append(inp)
-    list.append(inp2)
-    list.append(inp3)
-    print(f"შენი შემთხვევითად შერჩეული საყვარელი სპორტია: {random.choice(list)}")
-fun()
+def rndmsprt():
+    sprts = []
+    for i in range(3):
+        sprt = input(f"მიუთითეთ {i+1} საყვარელი სპორტი: ")
+        sprts.append(sprt)
+
+    num = 0 
+    print(f"თქვენი საყვარელი სპორტი არის: {sprt[num]}")
+
+rndmsprt()
