@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: larger;
+    font-family: sans-serif;
+}
+.box{
+    border: 2px solid red;
+    background-color: red;
+}
+.box2{
+    position: relative;
+    top: -154px;
+    left: 0;
+  height: 100px;
+  width: 100%;
+  border: 2px solid aqua;
+  background-color: hsl(180, 100%, 50%, 0.3);
+  color: blue;
+}
+
+.div{
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}

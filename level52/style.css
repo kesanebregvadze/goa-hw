@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: hsl(212, 45%, 89%);
+height: 100vh;
+}
+.container{
+    background-color: white;
+    padding: 10px;
+    width: 350px;
+    border-radius: 20px;
+}
+.img-container{
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+}
