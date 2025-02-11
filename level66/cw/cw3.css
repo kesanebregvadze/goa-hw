@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+   justify-content: space-between;
+}
+
+.box {
+   height: 190px;
+   width: 190px;
+   background-color: aquamarine;
+}
+.con{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

@@ -1,0 +1,15 @@
+.con{
+    display: flex;
+    flex-direction: row;
+    background:linear-gradient(lightblue,lightpink);
+    padding: 10px;
+    height: 300px;
+    justify-content:  center;
+    gap: 10%;
+}
+.box{
+    background: linear-gradient(lightgreen,lightpink);
+    padding: 20px;
+    text-align: center;
+    border:5px solid wheat;
+}

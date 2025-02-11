@@ -1,0 +1,32 @@
+<!-- 2) შევქმანთ მართკუთხედი და ანიამცია შევქმნათ სდაც ამ მართკუთხედს 360 გრადუსით შემოვატრიალებთ -->
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მბრუნავი მართკუთხედი</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .rectangle {
+            width: 150px;
+            height: 100px;
+            background-color: #3498db;
+            position: relative;
+            animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="rectangle"></div>
+</body>
+</html>
