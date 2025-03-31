@@ -1,20 +1,24 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-img{
-height: 100px;
+
+img {
+    height: 100px;
 }
-.poto{
-margin-left: 0;
+
+.poto {
+    margin-left: 0;
 
 }
-.poto2{
-margin-left: 400px;
-    
+
+.poto2 {
+    margin-left: 400px;
+
 }
-.poto3{
-margin-left: 400px;
-        
+
+.poto3 {
+    margin-left: 400px;
+
 }

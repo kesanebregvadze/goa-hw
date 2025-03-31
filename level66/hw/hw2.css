@@ -1,0 +1,19 @@
+/* 2)შექმენით მშობელი div, რომელიც შეიცავს 2 შვილობილ div-ს. გამოიყენეთ flexbox, რათა შვილები გაცენტროთ.
+ */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+}
+.red{
+    gap: 10px;
+    background-color: red;
+    height: 160px;
+    width: 360px;
+}
