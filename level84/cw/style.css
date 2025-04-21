@@ -1,0 +1,22 @@
+/* reset css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.perent {
+    display: flex;
+    gap: 12px;
+    padding: 90px;
+    background-image: url("OIP\ \(1\).jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.box {
+    height: 300px;
+    width: 300px;
+    background-color: lightblue;
+
+}

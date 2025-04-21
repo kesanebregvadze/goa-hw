@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: aquamarine;
+    border:turquoise;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+button:hover {
+    background-color: rgba(90, 196, 161, 0.577);
+    cursor: alias;
+}

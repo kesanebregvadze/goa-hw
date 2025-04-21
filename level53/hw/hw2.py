@@ -1,2 +1,6 @@
 # 2) მაქნაზე
-# ვერ ვერკვევი მანქანებში
+CAR = {
+    "brend": "porSe",
+    "brend": "bmw m4",
+}
+print(CAR)
