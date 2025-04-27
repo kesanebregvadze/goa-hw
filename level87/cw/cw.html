@@ -1,0 +1,28 @@
+<!-- level 87:  -->
+<!-- 1) რენდომულად შეიცვალოს ფერი ჩვენმა backgroundColor მა ჩვენის კოდის გამოყენებით -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body">
+    <button onclick="handleBgChange()" type="button">click</button>
+    <!-- js -->
+    <script>
+      const body = document.getElementById("body")
+      const btn1 = document.getElementsByTagName("button")[0]
+      console.log(btn1)
+      function handleBgChange(){
+        const colors = ["blue","green","yellow","red"]
+
+        const randomIndex = Math.floor( Math.random() * 4)
+        console.log(randomIndex)
+        
+        body.style.backgroundColor = colors[randomIndex]
+      }
+    </script>
+    <!-- /js -->
+  </body>
+</html>
