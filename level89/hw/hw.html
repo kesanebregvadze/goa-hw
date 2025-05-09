@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Level 89 – ცხოველების საიტი</title>
+    <title>document</title>
     <style>
         body {
             font-family: sans-serif;
@@ -56,7 +56,7 @@
     <!-- ცხენი -->
     <section>
         <h2>ცხენი</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Horse_in_paddock.jpg" alt="ცხენი" id="horseImg">
+        <img src="Equus_species.jpg" alt="ცხენი" id="horseImg">
         <p class="counter">დაჭერილია: <span id="horseCount">0</span> ჯერ</p>
         <button onclick="increaseCount('horse')">დაჭირე ცხენს</button>
     </section>
@@ -64,7 +64,7 @@
     <!-- ზღვის გოჭი -->
     <section>
         <h2>ზღვის გოჭი</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Guinea_Pig_eating.jpg" alt="ზღვის გოჭი"
+        <img src="ODL.jpg" alt="ზღვის გოჭი"
             id="guineaImg">
         <p class="counter">დაჭერილია: <span id="guineaCount">0</span> ჯერ</p>
         <button onclick="increaseCount('guinea')">დაჭირე გოჭს</button>
@@ -73,7 +73,7 @@
     <!-- ჟირაფი -->
     <section>
         <h2>ჟირაფი</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg" alt="ჟირაფი"
+        <img src="OIP.jpg" alt="ჟირაფი"
             id="giraffeImg">
         <p class="counter">დაჭერილია: <span id="giraffeCount">0</span> ჯერ</p>
         <button onclick="increaseCount('giraffe')">დაჭირე ჟირაფს</button>
@@ -81,7 +81,7 @@
     <!-- ლომი -->
     <section>
         <h2>ლომი</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg" alt="ლომი"
+        <img src="OSK.jpg" alt="ლომი"
             id="lionImg">
         <p class="counter">დაჭერილია: <span id="lionCount">0</span> ჯერ</p>
         <button onclick="increaseCount('lion')">დაჭირე ლომს</button>
@@ -90,7 +90,7 @@
     <!-- ფოტო + background შეცვლა -->
     <section>
         <h2>დააჭირე ფოტოს ფონის შესაცვლელად</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Horse_in_paddock.jpg" id="changerImg">
+        <img src="OIP (1).jpg" id="changerImg">
     </section>
 
     <script>
@@ -108,10 +108,10 @@
 
         const changerImg = document.getElementById('changerImg');
         const images = [
-            'https://upload.wikimedia.org/wikipedia/commons/1/16/Horse_in_paddock.jpg',
-            'https://upload.wikimedia.org/wikipedia/commons/1/1e/Guinea_Pig_eating.jpg',
-            'https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg',
-            'https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg'
+            'Equus_species.jpg',
+            'ODL.jpg',
+            'OIP.jpg',
+            'OSK.jpg'
         ];
         let index = 0;
 

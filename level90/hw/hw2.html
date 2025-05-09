@@ -14,45 +14,64 @@
 
         .gc {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: 1fr 2fr 2fr;
+            grid-template-rows: auto auto auto auto;
             gap: 10px;
-            height: 100vh;
-        }
-        .div1{
-            background-color: chartreuse;
-        }
-         .div2{
-            background-color: chartreuse;
-        }
-         .div3{
-            background-color: chartreuse;
-        }
-         .div4{
-            background-color: chartreuse;
-        } 
-        .div5{
-            background-color: chartreuse;
-        } 
-        .div6{
-            background-color: chartreuse;
-            
+            padding: 10px;
+
         }
 
+        .header {
+            background-color: chartreuse;
+            grid-column: 1/4;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .side_bar {
+            background-color: chartreuse;
+            grid-row: 2/4;
+            text-align: center;
+            padding: 10px;
+        }
+        .content1{
+            background-color: chartreuse;
+            grid-column: 2/4;
+            text-align: center;
+            padding: 10px;
+        }
+        .content2{
+            background-color: chartreuse;
+            text-align: center;
+            padding: 10px;
+        }
+        .content3{
+            background-color: chartreuse;
+            text-align: center;
+            padding: 10px;
+        }
+        .footer{
+            background-color: chartreuse;
+            grid-column: 1/4;
+            text-align: center;
+            padding: 10px;
+        }
     </style>
 </head>
 
 <body>
-        
-        
-        <div class="div1">header</div>
-        <div class="div2"></div>
-        <div class="div3"></div>
-        <div class="div4"></div>
-        <div class="div5"></div>
-        <div class="div6"></div>
 
-    
+    <div class="gc">
+        <div class="header">header</div>
+        <div class="side_bar">side bar</div>
+        <div class="content1">content1</div>
+        <div class="content2"> content2</div>
+        <div class="content3">contet3</div>
+        <div class="footer">footer</div>
+    </div>
+
+
+
 </body>
 
 </html>
