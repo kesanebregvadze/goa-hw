@@ -13,127 +13,45 @@
         }
 
         body {
-            display: grid;
-            align-items: center;
-            justify-content: center;
-            background-color: lightpink;
-            height: 100vh;
+            background-color: lightcyan;
+            font-family: sans-serif;
+            padding: 20px;
         }
 
-        div {
+        .div {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 10px;
+        }
+
+        .col {
             background-color: rgb(6, 12, 50);
             color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .m {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .l {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .k {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .j {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        
-        .I{
-            height: 90px;
-            width: 100vh;
-
-
-        
-        }.h {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        
-        .g {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        
-        .f {
-            height: 90px;
-            width: 40vh;
-
-
-        }
-        .e {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .d {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .c {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .b {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-        .a {
-            height: 90px;
-            width: 100vh;
-
-
-        }
-
-        h2 {
-            
+            padding: 10px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <h2>12 Column Grid</h2>
-    
 
-    <div class="m">12</div>
-    <div class="l">11</div>
-    <div class="k">10</div>
-    <div class="j">9</div>
-    <div class="I">8</div>
-    <div class="h">7</div>
-    <DIV class="G">6</DIV>
-    <div class="a">1</div>
+    <div class="div">
+        <div class="col" style="grid-column: span 12;">12</div>
+        <div class="col" style="grid-column: span 1;">1</div>
+        <div class="col" style="grid-column: span 11;">11</div>
+        <div class="col" style="grid-column: span 2;">2</div>
+        <div class="col" style="grid-column: span 10;">10</div>
+        <div class="col" style="grid-column: span 3;">3</div>
+        <div class="col" style="grid-column: span 9;">9</div>
+        <div class="col" style="grid-column: span 4;">4</div>
+        <div class="col" style="grid-column: span 8;">8</div>
+        <div class="col" style="grid-column: span 5;">5</div>
+        <div class="col" style="grid-column: span 7;">7</div>
+        <div class="col" style="grid-column: span 6;">6</div>
+        <div class="col" style="grid-column: span 6;">6</div>
+    </div>
 
-    <div class="b">2</div>
-    <div class="c">3</div>
-    <div class="d">4</div>
-    <div class="e">5</div>
-    <div class="f">6</div>
 
 
 

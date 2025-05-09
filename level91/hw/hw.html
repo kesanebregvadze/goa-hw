@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Level 91 – Counter & Text Changer</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 40px;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        #count {
+            font-size: 40px;
+            margin: 20px;
+            display: inline-block;
+            width: 80px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #textChange {
+            font-size: 24px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Level 91 – ქაუნთერი</h1>
+
+    <div>
+        <span id="count">0</span>
+    </div>
+
+    <div>
+        <button onclick="increase()">+1</button>
+        <button onclick="decrease()">-1</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+
+    <hr style="margin: 50px 0;">
+
+    <h2>ტექსტის შეცვლა და Background</h2>
+    <p id="textChange">ეს არის საწყისი ტექსტი</p>
+    <button onclick="changeTextAndBackground()">შეცვალე ტექსტი და ფონი</button>
+    <script>
+        let count = 0;
+        const countSpan = document.getElementById('count');
+
+        function updateColor() {
+            if (count > 0) {
+                countSpan.style.color = 'green';
+            } else if (count === 0) {
+                countSpan.style.color = 'black';
+            }
+        }
+
+        function increase() {
+            count++;
+            countSpan.textContent = count;
+            updateColor();
+        }
+
+        function decrease() {
+            if (count > 0) {
+                count--;
+                countSpan.textContent = count;
+                updateColor();
+            }
+        }
+
+        function reset() {
+            count = 0;
+            countSpan.textContent = count;
+            updateColor();
+        }
+
+        function changeTextAndBackground() {
+            const p = document.getElementById('textChange');
+            p.textContent = 'ტექსტი შეიცვალა! გილოცავ!';
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        updateColor();
+    </script>
+
+</body>
+
+</html>

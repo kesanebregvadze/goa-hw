@@ -1,0 +1,129 @@
+<!-- 1) ააგეთ საიტი ცხენებზე ფუნქციონალით (ყველაფერი გამოიყენეთ რაც JS-ში ვისწავლეთ -->
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Level 89 – ცხოველების საიტი</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            transition: background-color 0.5s;
+        }
+
+        section {
+            margin-bottom: 50px;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        img {
+            width: 300px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .counter {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Level 89 – ცხოველების საიტი</h1>
+    <!-- ცხენი -->
+    <section>
+        <h2>ცხენი</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Horse_in_paddock.jpg" alt="ცხენი" id="horseImg">
+        <p class="counter">დაჭერილია: <span id="horseCount">0</span> ჯერ</p>
+        <button onclick="increaseCount('horse')">დაჭირე ცხენს</button>
+    </section>
+
+    <!-- ზღვის გოჭი -->
+    <section>
+        <h2>ზღვის გოჭი</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Guinea_Pig_eating.jpg" alt="ზღვის გოჭი"
+            id="guineaImg">
+        <p class="counter">დაჭერილია: <span id="guineaCount">0</span> ჯერ</p>
+        <button onclick="increaseCount('guinea')">დაჭირე გოჭს</button>
+    </section>
+
+    <!-- ჟირაფი -->
+    <section>
+        <h2>ჟირაფი</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg" alt="ჟირაფი"
+            id="giraffeImg">
+        <p class="counter">დაჭერილია: <span id="giraffeCount">0</span> ჯერ</p>
+        <button onclick="increaseCount('giraffe')">დაჭირე ჟირაფს</button>
+    </section>
+    <!-- ლომი -->
+    <section>
+        <h2>ლომი</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg" alt="ლომი"
+            id="lionImg">
+        <p class="counter">დაჭერილია: <span id="lionCount">0</span> ჯერ</p>
+        <button onclick="increaseCount('lion')">დაჭირე ლომს</button>
+    </section>
+
+    <!-- ფოტო + background შეცვლა -->
+    <section>
+        <h2>დააჭირე ფოტოს ფონის შესაცვლელად</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Horse_in_paddock.jpg" id="changerImg">
+    </section>
+
+    <script>
+        const counters = {
+            horse: 0,
+            guinea: 0,
+            giraffe: 0,
+            lion: 0
+        };
+
+        function increaseCount(animal) {
+            counters[animal]++;
+            document.getElementById(animal + 'Count').textContent = counters[animal];
+        }
+
+        const changerImg = document.getElementById('changerImg');
+        const images = [
+            'https://upload.wikimedia.org/wikipedia/commons/1/16/Horse_in_paddock.jpg',
+            'https://upload.wikimedia.org/wikipedia/commons/1/1e/Guinea_Pig_eating.jpg',
+            'https://upload.wikimedia.org/wikipedia/commons/9/9f/Giraffe_standing.jpg',
+            'https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg'
+        ];
+        let index = 0;
+
+        changerImg.addEventListener('click', () => {
+            index = (index + 1) % images.length;
+            changerImg.src = images[index];
+
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+        });
+    </script>
+
+</body>
+
+</html>

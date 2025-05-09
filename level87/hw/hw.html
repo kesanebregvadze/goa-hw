@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fun Interactive Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(45deg, #a0eaff, #ffdfdf);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      transition: background 0.5s ease;
+      cursor: pointer;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 40px;
+      color: #333;
+    }
+
+    .counter-container, .random-container {
+      margin: 20px;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 300px;
+    }
+
+    .counter-value {
+      font-size: 50px;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 5px;
+      border: none;
+      border-radius: 10px;
+      background: #7e57c2;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #5e35b1;
+    }
+
+    .capy-image {
+      width: 200px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body onclick="changeBackgroundColor()">
+<h1>კაპიბარას საყვარელი გვერდი 🦫</h1>
+
+  <div class="counter-container">
+    <div class="counter-value" id="counter">0</div>
+    <button onclick="changeCounter(1)">➕ გაზრდა</button>
+    <button onclick="changeCounter(-1)">➖ შემცირება</button>
+  </div>
+
+  <div class="random-container">
+    <div class="counter-value" id="randomNum">?</div>
+    <button onclick="generateRandom()">🎲 შემთხვევითი რიცხვი</button>
+  </div>
+
+  <img class="capy-image" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Capybara_%28Hydrochoerus_hydrochaeris%29.JPG" alt="Capybara">
+
+  <script>
+    let count = 0;
+
+    function changeCounter(amount) {
+      count += amount;
+      document.getElementById("counter").textContent = count;
+    }
+
+    function generateRandom() {
+      const rand = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("randomNum").textContent = rand;
+    }
+
+    function changeBackgroundColor() {
+      const r = Math.floor(Math.random() * 255);
+      const g = Math.floor(Math.random() * 255);
+      const b = Math.floor(Math.random() * 255);
+      document.body.style.background = `rgb(${r}, ${g}, ${b})`;
+    }
+  </script>
+</body>
+</html>

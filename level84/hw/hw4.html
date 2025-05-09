@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox vs Grid</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px;
+      background: #fff;
+    }
+
+    h2 {
+      color: #003b3f;
+      margin-bottom: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+    }
+
+    .flexbox, .grid {
+      background: #eee;
+      padding: 10px;
+    }
+
+    .flexbox {
+      display: flex;
+      gap: 10px;
+    }
+
+    .flexbox div {
+      background: #d50000;
+      width: 50px;
+      height: 150px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 50px);
+      grid-auto-rows: 50px;
+      gap: 10px;
+    }
+
+    .grid div {
+      background: #d50000;
+    }
+
+    .grid div:nth-child(1) { 
+        grid-column: span 2; 
+    }
+    .grid div:nth-child(2) { 
+        grid-row: span 2; 
+    }
+    .grid div:nth-child(3) {}
+    .grid div:nth-child(4) { 
+        grid-column: span 2;
+     }
+    .grid div:nth-child(5) {}
+    .grid div:nth-child(6) {}
+    
+    .label {
+      text-align: center;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #990000;
+    }
+  </style>
+</head>
+<body>
+  <h2>Combining Flexbox and CSS Grid</h2>
+  <div class="container">
+    <div>
+      <div class="flexbox">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="label">One Dimension</div>
+    </div>
+
+    <div>
+      <div class="grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="label">Two Dimension</div>
+    </div>
+  </div>
+</body>
+</html>

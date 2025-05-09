@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background: #222;
+            font-family: sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                "hero hero box3"
+                "hero hero box4"
+                "box2 box2 box2"
+                "box5 box6 box7"
+                "box8 box9 .";
+            grid-template-columns: 2fr 2fr 1fr;
+            grid-auto-rows: 100px;
+            gap: 10px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            border-radius: 10px;
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .box:hover {
+            transform: scale(1.05);
+        }
+
+        .box::before {
+            content: attr(data-area);
+            position: absolute;
+            top: 10px;
+            background: #000000aa;
+            color: white;
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+
+        .hero {
+            grid-area: hero;
+            background: linear-gradient(to right, #ff77e9, #ff9ad9);
+        }
+
+        .box2 {
+            grid-area: box2;
+            background: linear-gradient(to right, #c77dff, #9f8fff);
+        }
+
+        .box3 {
+            grid-area: box3;
+            background: linear-gradient(to right, #5ee7df, #b490ca);
+        }
+
+        .box4 {
+            grid-area: box4;
+            background: linear-gradient(to right, #43e97b, #38f9d7);
+        }
+
+        .box5 {
+            grid-area: box5;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        }
+
+        .box6 {
+            grid-area: box6;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        }
+
+        .box7 {
+            grid-area: box7;
+            background: linear-gradient(to right, #fccb90, #d57eeb);
+        }
+
+        .box8 {
+            grid-area: box8;
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+        }
+
+        .box9 {
+            grid-area: box9;
+            background: linear-gradient(to right, #fddb92, #d1fdff);
+        }
+
+        .diamond {
+            width: 40px;
+            height: 40px;
+            background: white;
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-weight: bold;
+        }
+
+        .diamond span {
+            transform: rotate(-45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="box hero" data-area="grid-area: hero">
+            <div class="diamond"><span>1</span></div>
+        </div>
+        <div class="box box2" data-area="grid-area: box2">
+            <div class="diamond"><span>2</span></div>
+        </div>
+        <div class="box box3" data-area="grid-area: box3">
+            <div class="diamond"><span>3</span></div>
+        </div>
+        <div class="box box4" data-area="grid-area: box4">
+            <div class="diamond"><span>4</span></div>
+        </div>
+        <div class="box box5" data-area="grid-area: box5">
+            <div class="diamond"><span>5</span></div>
+        </div>
+        <div class="box box6" data-area="grid-area: box6">
+            <div class="diamond"><span>6</span></div>
+        </div>
+        <div class="box box7" data-area="grid-area: box7">
+            <div class="diamond"><span>7</span></div>
+        </div>
+        <div class="box box8" data-area="grid-area: box8">
+            <div class="diamond"><span>8</span></div>
+        </div>
+        <div class="box box9" data-area="grid-area: box9">
+            <div class="diamond"><span>9</span></div>
+        </div>
+    </div>
+</body>
+
+</html>

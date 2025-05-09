@@ -1,0 +1,29 @@
+<!-- 2) შექმენით საიტი რომელზეც იქნება ერთი ფოტო და ორი ღილაკი. როდესაც პირველ ღილაკს დააჭერთ ფოტოს გამოსახულება შეიცვალოს. და როცა მეორე ღილაკს დავაჭერთ ფოტოს გამოსახულება ისევ შეიცვალოს. ჯამში 3 განსხვავებული სურათი დაგჭირდებათ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images.jpg" alt="" id="img">
+    <button onclick="img1()">click</button>
+    <button onclick="img2()" >click</button>
+    <script>
+        let img = document.getElementById("img")
+
+        function img1(){
+            img.src = "./images(1).jpg"
+            
+        }
+        function img2(){
+            img.src = "./AIARTITA.jpg"
+            
+        }
+    </script>
+</body>
+
+</html>
