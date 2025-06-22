@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAL-ORENTED ACADEMY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: #595656;
+        }
+
+        header img {
+            height: 30px;
+            width: 30px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(53, 214, 53);
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            border-radius: 10px;
+
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        main img {
+            height: 190px;
+            width: 190px;
+
+        }
+
+        p {
+            color: white;
+            padding: 10px;
+        }
+
+        .img {
+            border-radius: 30px;
+        }
+
+        a {
+            color: rgb(251, 250, 250);
+            padding: 10px;
+        }
+
+        a:hover {
+            color: rgb(58, 47, 47);
+            padding: 10px;
+        }
+
+
+
+        main {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin-top: 10px;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+            padding: 10px;
+
+
+        }
+
+        .green {
+            color: rgb(23, 176, 23);
+        }
+
+        .section {
+            background: #333;
+            height: 750px;
+            width: 650px;
+            box-shadow: 0 0 50px 5px #4caf4f;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .img1 {
+            height: 300px;
+            width: 200px;
+
+        }
+
+        button {
+            background-color: #4caf4f;
+            height: 100px;
+            width: 600px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: #20f127;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+
+        <div>
+            <a href="index.html">რა არის GOA?</a>
+            <a href="page2.html">GOA-ს შესახებ</a>
+            <a href="page3.html">GOA</a>
+            <a href="https://www.facebook.com/nika11keshelava/">facebook</a>
+        </div>
+        <img src="OIP (1).jpg" alt="" class="img">
+
+    </header>
+    <main>
+        <section class="section">
+            <button onclick="alert('ნებისმიერი ასაკიდან.')">რომელი ასაკიდან შეიძლება ჩემი შვილის Goa-ში ტარება?</button>
+            <button onclick="alert('შეგიძლიათ აირჩიოთ ერთი, ორი ან სამი გაკვეთილი კვირაში ფასების მიხედვით.')">კვირაში
+                რამდენი გაკვეთილი ექნება ჩემ შვილს?</button>
+            <button onclick="alert('თქვენ ირჩევთ გუნდს რომლის დროც მოგწონთ.')">რომელ საათებში ექნება
+                გაკვეთელები?</button>
+            <button onclick="alert('საათ ნახევარი-ორი საათი.')">რამდენ საათიანი იქნება გააკვეთილები?</button>
+            <button
+                onclick="alert('აუცილებელი სწავლა არის წელიწად ნახევარი, შემდეგ კი შეგიძლით გააგრძელოთ სწავლა ორი წელ ნახევარი კიდე.')">რამდენი
+                ხანი გაგრძელდება სწავლა?</button>
+            <button onclick="alert('ეს არის მთლიანად დამოკიდებული თქვენი შვილის მონდომებაზე და შრომაზე.')">როდის გახდება
+                ჩემი შვილი ლიდერი?</button>
+        </section>
+    </main>
+
+</body>
+
+</html>

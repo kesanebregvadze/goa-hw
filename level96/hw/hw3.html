@@ -1,0 +1,58 @@
+<!-- 3)ინსტრუქცია:
+ახლა იგივე ყუთს დაუმატე ::after პსევდოელემენტი, რომელიც იქნება წითელი კვადრატი.
+
+ზომა: 40px × 40px
+
+ფონის ფერი: წითელი
+
+გამოიყენე იგივე პრინციპი, რაც ::before-ში
+
+
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: gray;
+        }
+
+        .box::before {
+            height: 40px;
+            width: 40px;
+            background-color: blue;
+            position: absolute;
+            content: "HI HOW ARE YOU?";
+        }
+
+        .BOX::after {
+            height: 40PX;
+            width: 40PX;
+            background-color: RED;
+            position: absolute;
+            content: "I AM GOD AND YOU?";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <P>HI HOW ARE YOU?</P>
+        <P>I AM GOOD AND YOU?</P>
+
+    </div>
+</body>
+
+</html>

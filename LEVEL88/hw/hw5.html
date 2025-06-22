@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #111;
+            color: white;
+            padding: 20px;
+
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: coral;
+            border: 2px solid black;
+            min-height: 50px;
+
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .blue {
+            background-color: blue;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+        .div{
+            display: grid;
+            gap: 5px;
+            background: #222;
+            margin-bottom:40px ;
+            padding: 10px;
+            grid-template-columns: repeat(6,1fr);
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <div class="box red"></div>
+        <div class="box orange"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+        <div class="box yellow"></div>
+        <div class="box pink"></div>
+        <div class="box green"></div>
+        <div class="box orange"></div>
+        <div class="box red"></div>
+        <div class="box blue"></div>
+        <div class="box pink"></div>
+        <div class="box green"></div>
+        <div class="box yellow"></div>
+        <div class="box pink"></div>
+        <div class="box blue"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+        <div class="box red"></div>
+    </div>
+</body>
+
+</html>

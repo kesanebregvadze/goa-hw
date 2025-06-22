@@ -1,0 +1,77 @@
+<!-- 2) apple -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            background-color: white;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .div {
+            background-color: rgb(237, 230, 230);
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        img {
+            height: 190px;
+        }
+
+        button {
+            background-color: cadetblue;
+            border: cadetblue;
+            height: 40px;
+            width: 190px;
+        }
+
+        button:hover {
+            background-color: rgb(57, 188, 192);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <img src="./assets/potos/iphone_15__buwagff0mwwi_small_2x.png" alt="">
+        <button onclick="alert('it is  on the way!')">buy</button>
+        <h5>iPhone 16 Pro</h5>
+        <p>The ultimate iPhone.</p>
+    </div>
+    <div class="div">
+        <img src="./assets/potos/iphone_16__c5bvots96jee_small_2x.png" alt="">
+        <button onclick="alert('it is  on the way!')">buy</button>
+
+        <h5>iPhone 16</h5>
+        <p>A total powerhouse.</p>
+    </div>
+    <div class="div">
+        <img src="./assets/potos/iphone_16e__cubm3xoy5qaa_small_2x.png" alt="">
+        <button onclick="alert('it is  on the way!')">buy</button>
+        <h5>iPhone 16e</h5>
+        <p>Latest iPhone. Greatest price.</p>
+    </div>
+    <div class="div">
+        <img src="./assets/potos/iphone_16pro__erw9alves2qa_small_2x.png" alt="">
+        <button onclick="alert('it is  on the way!')">buy</button>
+        <h5>iPhone 15</h5>
+        <p>As amazing as ever.</p>
+    </div>
+</body>
+
+</html>

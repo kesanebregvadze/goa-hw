@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="flex justify-center align-center bg-blue-600">
+    <div class=" bg-red-300 rounded-md p-2 h-34 w-63">
+        <h1>To Do List</h1>
+
+        <div class="">
+            <input type="text" id="todo-input" placeholder="დავალების დამატება...">
+            <button id="add-btn" type="button" class="rounded-md bg- pink-300">დამატება</button>
+        </div>
+
+        <ul id="todo-list">
+
+        </ul>
+    </div>
+    <script>
+        const input = document.getElementById("todo-input")
+        const addBtn = document.getElementById("add-btn")
+        const list = document.getElementById("todo-list")
+
+        // ღლაკზე დაჭერისას ფუნქციის გამოძახება 
+
+        addBtn.addEventListener('click', addTask)
+
+        // კრავლიატურაზე enter-ის დაჭერის დროს რაღაც მოვლენა მოხდეს
+        input.addEventListener('keydown', function (e) {
+            if (e.key === "Enter") {
+                e.preventDefault() // გვერდის გადატვირთვისგან შეაჩერებს 
+                addTask() // დაველების დამატების ფუნქციის გამოძახება
+            }
+        })
+
+
+        // დავალების დამატების ფუნქცია
+        function addTask() {
+            const taskText = input.value.trim() // აცილებს ზედმეტ ცარიელ ადგილებს
+
+            // თუ ტექსტი არ არის ცარიელი, მაშინ ვაგრძელებთ 
+            if (taskText !== '') {
+                // ვქმნით li ელემენტს, რომელიც დაემატება სიაში 
+                const li = document.createElement('li')
+
+                // ვქმნით span ელემენტს სადაც დავალებების ტექსი დაიწერება 
+                const span = document.createElement('span')
+                span.textContent = taskText // დავალების ტექსტის განთავსება სპანში 
+
+                // ვქმნით წაშლის ღილაკს თითოეულ დავალებაზე
+                const delBtn = document.createElement('button')
+                delBtn.textContent = '-' // ღილაკზე გამოჩნდება სიტყვა წაშლა 
+                delBtn.className = 'delete-btn' // css კლასი ღილაკის სტილისთვის 
+
+                // წაშლის ღილაკზე დაჭერის დროს li წაიშლება 
+                delBtn.addEventListener('click', () => {
+                    list.removeChild(li)
+
+                })
+
+
+                // დავალების ტექსტის და წაშლილი ღილაკების გაერთიანება li ში 
+
+                li.appendChild(span)
+                li.appendChild(delBtn)
+
+                // li-ს დამატება to do list-ში
+                list.appendChild(li)
+
+                // input ველის გასუფავება ახალი დავალების დასაწერასდ
+                input.value = ''
+            }
+
+        }
+    </script>
+</body>
+
+</html>

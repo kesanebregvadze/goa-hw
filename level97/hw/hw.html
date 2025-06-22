@@ -1,0 +1,26 @@
+<!-- 1) შექმენი ღილაკი.
+
+ღილაკზე დაჭერისას გვერდზე გამოსახული ტექსტი შეიცვალოს JavaScript-ის გამოყენებით. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn"  onclick="text()">click me!</button>
+    <h1 id="h1">hi!</h1>
+    <script>
+        function text() {
+            document.getElementById("h1").textContent = "hello!";
+
+        }
+
+
+    </script>
+</body>
+
+</html>

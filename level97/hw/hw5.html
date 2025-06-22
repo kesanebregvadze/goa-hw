@@ -1,0 +1,66 @@
+<!-- 5) გააკეთეთ DarkMode როგორც გაკვეთილზე გავაკეთეთ და დაამატეთ ისიც რომ როდესაც შავზე იქნება ღილაკზე ეწეროს Dark და როცა თეთრზე Light -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Example</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--black-900);
+        }
+
+        .btn {
+            background-color: var(--black-950);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--black-900);
+        }
+
+        :root {
+            --white: black;
+            --black-950: rgb(127, 127, 127);
+            --black-900: rgb(255, 255, 255);
+        }
+
+        .dark {
+            --white: white;
+            --black-950: black;
+            --black-900: rgb(85, 85, 85);
+        }
+    </style>
+</head>
+
+<body>
+    <button id="darkMode" class="btn">Dark</button>
+
+    <script>
+        const darkModeBtn = document.getElementById("darkMode");
+
+        darkModeBtn.addEventListener("click", function () {
+            document.body.classList.toggle("dark");
+            if (document.body.classList.contains("dark")) {
+                darkModeBtn.textContent = "Light";
+            } else {
+                darkModeBtn.textContent = "Dark";
+            }
+        });
+    </script>
+</body>
+
+</html>

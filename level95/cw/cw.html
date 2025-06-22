@@ -1,0 +1,46 @@
+<!-- 1) ავაგოთ box რომელსაც ექმენაბ სიგრძე სიგანე 100px 
+  1. გავუწეროდთ ლურჯი ფერის ::before სიგრზე-სიგანე 40px
+  2.გავყწეროთ წითელი ფერის ::after სიგრზე-სიგანე 40px -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(0, 255, 98);
+        }
+
+        .box::before {
+            height: 100px;
+            width: 100px;
+            color: blue;
+        }
+
+        .box::after {
+            height: 40px;
+            width: 40px;
+            color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <p>hi!</p>
+        <p>hello!</p>
+    </div>
+</body>
+
+</html>

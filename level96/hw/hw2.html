@@ -1,0 +1,48 @@
+<!-- 2)ინსტრუქცია:
+იმავე box ელემენტს დაუმატე ::before პსევდოელემენტი.
+ეს იქნება პატარა ლურჯი კვადრატი, რომელიც გამოჩნდება ყუთის შიგნით.
+
+ზომა: 40px სიგანე და სიმაღლე
+
+ფონის ფერი: ლურჯი
+
+გამოყენე position: absolute
+
+არ დაგავიწყდეს content: "" -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: gray;
+        }
+
+        .box::before {
+            height: 40px;
+            width: 40px;
+            background-color: blue;
+            position: absolute;
+            content: "HI HOW ARE YOU?";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <P>HI HOW ARE YOU?</P>
+    </div>
+</body>
+
+</html>

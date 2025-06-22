@@ -1,0 +1,25 @@
+<!-- 4) გვერდზე გამოტანე რიცხვი.
+
+ღილაკზე ყოველი დაჭერით ეს რიცხვი 1-ით იზრდება. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p1">0</p>
+    <button onclick="num()">click</button>
+    <script>
+        let count = 0;
+        function num() {
+            count += 1;
+            document.getElementById("p1").innerText = count;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!-- 2. ლურჯი კვადრატი ::before-ით
+ინსტრუქცია:
+
+წინა დავალების ყუთს დაუმატეთ ::before პსევდოელემენტი.
+
+გახადეთ მისი ზომა 40px × 40px.
+
+ფონის ფერი: ლურჯი.
+
+მინიშნება: გამოიყენეთ position: absolute და არ დაგავიწყდეთ content: ""! -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+
+        .box::before {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            content: "p";
+            color:darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <p>
+            HI HOW ARE YOU?
+        </p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: beige;
+        }
+        div{
+            max-width: 638px;
+            background-color: blueviolet;
+            height: 330px;
+            width: 430px;
+            border-radius: 10px;
+        }
+        img{
+            border-radius: 10px;
+            padding: 20px;
+        }
+        h1 {
+            padding: 10px;
+            color: plum;
+        }
+
+        h1:hover {
+            cursor: pointer;
+            color: aqua;
+        }
+
+        ul {
+            color: bisque;
+            padding: 0 30px;
+            font-weight: bold;
+        }
+
+        ul:hover {
+            cursor: pointer;
+            color: aqua;
+        }
+
+        @media screen and (max-width:638) {
+            h1 {
+                color: black;
+            }
+            ul{
+                color: rgb(175, 128, 70);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="OIP.jpg" alt="">
+        <h1>ყველაზე საყვარელი კნუტი</h1>
+        <ul>
+            <li>1 თვის</li>
+            <li>საქართველო</li>
+        </ul>
+    </div>
+</body>
+
+</html>

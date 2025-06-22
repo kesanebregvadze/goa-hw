@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--white);
+        }
+
+        .btn {
+            background-color: var(--black-950);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--black-900);
+
+        }
+
+        :root {
+            --red: rgb(255, 107, 107);
+            --black-950: rgb(193, 186, 186);
+            --black-900: rgb(122, 122, 122);
+        }
+
+        .dark {
+            --white: rgb(188, 220, 255);
+            --black-950: rgb(255, 255, 255);
+            --black-900: rgb(206, 206, 206);
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <button>
+            <ul class="flex gap-2">
+                <li><a href="home">home</a></li>
+                <li><a href="about">about</a></li>
+                <li><a href="contats">contats</a></li>
+                <li><a href="faqs">faqs</a></li>
+            </ul>
+        </button>
+    </header>
+    <button id="darckMode" class="btn">Dark mode</button>
+    <script>
+        const darkcMode = document.getElementById("darckMode");
+        darkcMode.addEventListener("click", function () {
+            document.body.classList.toggle("dark")
+        })
+    </script>
+</body>
+
+</html>

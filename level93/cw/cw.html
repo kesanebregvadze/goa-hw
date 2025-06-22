@@ -1,0 +1,88 @@
+<!-- 2)ავაგოთ home ექცია -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(180, 190, 180, 0.449);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            right: 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            z-index: 2;
+
+        }
+
+        a {
+            color: white;
+        }
+
+        .margin-center {
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        #HOME {
+            height: 120vh;
+            overflow-x: hidden;
+        }
+
+        #HOME video {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="margin-center">
+        <div>
+            <span>music</span>
+        </div>
+        <nav>
+            <ul>
+                <a href="#HOME">HOME</a>
+                <a href="#ABOUT">ABOUT</a>
+                <a href="#CONTACTS">CONTACTS</a>
+                <a href="#PROJECTS">PROJECTS</a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <video autoplay muted src="./assets/video/GOA - მატრიციდან გაქცევა.mp4"></video>
+        </section>
+        <section id="about" class="margin-center">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio aut facilis, minima quod possimus dolores
+                culpa ullam saepe perspiciatis quasi ab dolorum vel! Sint voluptate quaerat laborum facilis, ut tempore?
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>

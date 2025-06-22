@@ -1,0 +1,107 @@
+<!-- 3) ააგეთ slider ით ლამაზი მაიმუნის ვებსაიტი სადაც ბევირ მაიმუნები იქნება -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slider-container {
+            max-width: 800px;
+        }
+
+        .slider-img img {
+            height: 500px;
+            width: 100%;
+        }
+
+        .slider-img {
+            width: 800px;
+        }
+
+        .slider-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .slider-buttons button {
+            padding: 20px 25px;
+            border: none;
+            border-radius: 10px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            transition: all 300ms ease;
+        }
+
+        .slider-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.70);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider-container">
+        <div class="slider-img">
+            <h1>მაიმუნი!!</h1>
+            <img id="img" src="./assets/photos/xbFupt.jpg" alt="slider image" />
+        </div>
+        <div class="slider-buttons">
+            <button id="leftBtn">Left</button>
+            <button id="rightBtn">Right</button>
+        </div>
+    </div>
+
+    <script>
+        const img = document.getElementById("img");
+        const leftBtn = document.getElementById("leftBtn");
+        const rightBtn = document.getElementById("rightBtn");
+
+        const imgArray = [
+            "./assets/photos/Monkey-Photos.jpg",
+            "./assets/photos/OIP (1).jpg",
+            "./assets/photos/OIP (1).jpg",
+            "./assets/photos/pexels-a-d-908070.jpg",
+            "./assets/photos/xbFupt.jpg"
+        ];
+
+        let counter = 0;
+
+        function updateImage() {
+            img.src = imgArray[counter];
+        }
+
+        leftBtn.addEventListener("click", function () {
+            counter--;
+            if (counter < 0) {
+                counter = imgArray.length - 1;
+            }
+            updateImage();
+        });
+
+        rightBtn.addEventListener("click", function () {
+            counter++;
+            if (counter >= imgArray.length) {
+                counter = 0;
+            }
+            updateImage();
+        });
+    </script>
+</body>
+
+</html>

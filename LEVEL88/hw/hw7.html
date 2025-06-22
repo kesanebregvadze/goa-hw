@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exact Grid</title>
+  <style>
+    
+    body {
+      margin: 0;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      grid-template-rows: repeat(3, 1fr);
+      height: 100%;
+      gap: 5px;
+      padding: 10px;
+      background-color: #1e2a38;
+    }
+
+    .box1 {
+      background-color: #f8a35e; 
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .box2 {
+      background-color: #f45d5d; 
+      grid-column: 1;
+      grid-row: 2 / 4;
+    }
+
+    .box3 {
+      background-color: #4fd5c7; 
+      grid-column: 2;
+      grid-row: 1;
+    }
+
+    .box4 {
+      background-color: #32b8a6; 
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    .box5 {
+      background-color: #4fd5c7; 
+      grid-column: 2;
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .box5-left {
+      background-color: #32b8a6;
+    }
+
+    .box5-right {
+      background-color: #f8a35e;
+    }
+
+    .grid-container > div,
+    .box5 > div {
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">4</div>
+    <div class="box5">
+      <div class="box5-left">5A</div>
+      <div class="box5-right">5B</div>
+    </div>
+  </div>
+</body>
+</html>
