@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="flex items-center justify-center bg-pink-200 h-[100vh]">
+    <main class="bg-pink-500 h-[80px] w-[350px]  rounded-md p-2">
+        <h1 class="flex align-center justify-center ">To Do List</h1>
+        <form id="formTag">
+            <input class="rounded-md h-[30px] w-[200px]" type="text" name="text" placeholder="Enter The Task"
+                name="text" required />
+            <button id="submitButton" class="bg-pink-200 h-[40px]  w-[100px] rounded-md hover:bg-pink-600">Add The
+                Task</button>
+
+        </form>
+    </main>
+
+    <script src="">
+        const form = document.getElementById('formTag');//იპოვე HTML-ში ელემენტი, რომელსაც აქვს id="todo-input".
+
+
+        form.addEventListener('submit', (e) => { // ღლაკზე დაჭერისას ფუნქციის გამოძახება 
+            e.preventDefault();//ჩააჩუმე browser-ის ნაგულისხმევი ქცევა ამ მოქმედებაზე (მაგ: არ გადაატვირთო გვერდი).
+
+            let textValue = e.target.elements.text.value;//მიანიჭე textvalue ღილაკს CSS კლასი e.target.elements.text.value, რათა ვიზუალურად სტილში ჩაჯდეს.
+
+            console.log(textValue);
+
+            const ul = document.createElement('ul');//ვქმნით ახალ HTML ელემენტს დინამიკურად
+            const li = document.createElement('li');//ვქმნით ახალ HTML ელემენტს დინამიკურად
+            const Deletebtn = document.createElement('button');//ვქმნით ახალ HTML ელემენტს დინამიკურად
+            const editBtn = document.createElement('button');//ვქმნით ახალ HTML ელემენტს დინამიკურად
+            Deletebtn.textContent = 'Delete';//მიანიჭე delBtn ღილაკს CSS კლასი "delete-btn", რათა ვიზუალურად სტილში ჩაჯდეს.
+            ul.appendChild(li);//შვილობილი ელემენტის დამატება მშობელში (Child → Parent).
+
+            ul.appendChild(Deletebtn);//შვილობილი ელემენტის დამატება მშობელში (Child → Parent).
+
+            ul.appendChild(editBtn);//შვილობილი ელემენტის დამატება მშობელში (Child → Parent).
+
+
+            li.textContent = textValue;//მიანიჭე textcontent ღილაკს CSS კლასი textvalue, რათა ვიზუალურად სტილში ჩაჯდეს.
+            editBtn.textContent = 'Edit The Task';//მიანიჭე editbtn ღილაკს CSS კლასი "idit the task", რათა ვიზუალურად სტილში ჩაჯდეს.
+
+            Deletebtn.addEventListener('click', () => {
+                ul.removeChild(li);//წაშალე ეს კონკრეტული li ელემენტი list სიიდან.
+                ul.removeChild(Deletebtn);//წაშალე ეს კონკრეტული li ელემენტი list სიიდან.
+                ul.removeChild(editBtn);//წაშალე ეს კონკრეტული li ელემენტი list სიიდან.
+            });
+
+            editBtn.addEventListener('click', () => {//როცა მოხდება რაღაც (მაგ: დაჭერა, კლავიშის დაჭერა), გააკეთე ეს ან ის.
+                const edited = prompt('Please enter a text and edit the task');
+                li.textContent = edited;
+            })
+
+            document.body.appendChild(ul);//შვილობილი ელემენტის დამატება მშობელში (Child → Parent).
+
+        });
+    </script>
+</body>
+
+</html>
