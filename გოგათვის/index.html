@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🐶 გოგასთვის ჯუჯა ძაღლების მაგიური გალერეა</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="heart-4118022_1280.webp" />
+</head>
+
+<body
+  class="relative min-h-screen flex flex-col items-center bg-gradient-to-br from-pink-200 via-purple-200 to-blue-200 p-8 space-y-14 font-sans">
+
+  <!-- ❤️ ლაიქების მთვლელი -->
+  <div id="likeCounter"
+    class="fixed top-5 right-5 bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 text-white font-extrabold px-5 py-3 rounded-full shadow-lg select-none transition-transform duration-300">
+    ❤️ დაგულებული: 0
+  </div>
+
+  <!-- 📸 მთავარი გალერეა -->
+  <section
+    class="bg-white/70 backdrop-blur-xl w-full max-w-7xl p-10 rounded-3xl shadow-2xl space-y-12 border border-white/40">
+    <h1
+      class="text-5xl md:text-6xl font-extrabold text-center bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
+      🐶 გოგასთვის ჯუჯა ძაღლების მაგიური გალერეა
+    </h1>
+
+    <div id="images" class="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <!-- 100 ძაღლის სურათი ავტომატურად დაემატება -->
+    </div>
+  </section>
+
+  <!-- 📝 ძაღლის ნომრის ჩაწერა და ჩვენება -->
+  <section
+    class="bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-3xl p-8 flex flex-col items-center space-y-8 shadow-xl max-w-3xl select-none">
+    <h2 class="text-3xl font-bold text-purple-800 drop-shadow-md text-center">
+      ✅ ჩაწერე ნომერი რომელი ძაღლი მოგეწონა!
+    </h2>
+    <img src="heart-4118022_1280.webp" alt="heart" class="h-64 rounded-3xl shadow-2xl object-contain">
+
+    <div class="flex flex-col md:flex-row items-center gap-6 w-full max-w-md">
+      <input id="dogInput" type="number" placeholder="მაგ: 42"
+        class="flex-grow px-5 py-3 rounded-full border-2 border-purple-400 shadow-md focus:outline-none focus:ring-4 focus:ring-pink-400 transition" />
+      <button onclick="showDog()"
+        class="px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-700 text-white font-semibold rounded-full shadow-lg hover:scale-110 hover:shadow-xl transition-transform duration-300">
+        ნახვა
+      </button>
+    </div>
+
+    <div id="selectedDogBlock" class="hidden mt-6 space-y-6 text-center animate-fadeIn">
+      <h2 id="selectedDogName"
+        class="text-xl font-semibold text-pink-900 bg-pink-200 rounded-full inline-block px-6 py-2 shadow-lg">
+      </h2>
+      <img id="selectedDogImage" src="" alt=""
+        class="rounded-3xl shadow-2xl border-4 border-pink-400 w-72 h-52 object-cover mx-auto hover:scale-105 transition-transform duration-300" />
+      <button onclick="likeDog()"
+        class="px-6 py-3 bg-pink-600 text-white font-semibold rounded-full shadow-lg hover:bg-pink-700 hover:scale-105 transition duration-300">
+        ❤️ დამაგულე
+      </button>
+    </div>
+  </section>
+
+  <script>
+    let likeCount = 0;
+
+    // ავტომატურად 100 ძაღლის ჩასმა გალერეაში
+    const imagesContainer = document.getElementById('images');
+    for (let i = 1; i <= 100; i++) {
+      const div = document.createElement('div');
+      div.className = "space-y-3 text-center cursor-pointer group";
+      div.innerHTML = `
+        <h2
+          class="text-sm font-semibold text-pink-900 bg-pink-100 rounded-full inline-block px-4 py-1 shadow-md transition group-hover:bg-pink-200">
+          ჯუჯა ძაღლი ${i}
+        </h2>
+        <img src="https://placedog.net/400/300?id=${i}" alt="ჯუჯა ძაღლი ${i}"
+          class="rounded-3xl shadow-2xl border-4 border-pink-300 group-hover:border-pink-500 group-hover:scale-105 transition-transform duration-500">
+      `;
+
+      // ძაღლის დაჭერის ფუნქციონალი
+      div.addEventListener('click', () => {
+        document.getElementById('dogInput').value = i;
+        showDog();
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+      });
+
+      imagesContainer.appendChild(div);
+    }
+
+    // აირჩიე ძაღლი
+    function showDog() {
+      const number = parseInt(document.getElementById('dogInput').value);
+      if (!isNaN(number) && number >= 1 && number <= 100) {
+        document.getElementById('selectedDogName').textContent = `შენ აირჩიე ჯუჯა ძაღლი ${number}!`;
+        document.getElementById('selectedDogImage').src = `https://placedog.net/400/300?id=${number}`;
+        document.getElementById('selectedDogBlock').classList.remove('hidden');
+      } else {
+        alert('შეიყვანე სწორი ნომერი (1–100)');
+      }
+    }
+
+    // ❤️ დაგულება
+    function likeDog() {
+      likeCount++;
+      const counter = document.getElementById('likeCounter');
+      counter.textContent = `❤️ დაგულებული: ${likeCount}`;
+      counter.classList.add('animate-pulse');
+      setTimeout(() => counter.classList.remove('animate-pulse'), 400);
+    }
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.4s ease forwards;
+    }
+  </style>
+</body>
+
+</html>
