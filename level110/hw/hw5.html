@@ -1,0 +1,31 @@
+<!-- მოძებნე ყველა li ელემენტი და მიუწერე ინდექსები -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="hi">
+        <li>hi</li>
+        <li>helooooo</li>
+        <li>am kesooooo</li>
+    </ul>
+
+    <button onclick="fun()">helooooo</button>
+
+    <script>
+        function fun() {
+            const items = document.querySelectorAll('#hi li');
+            items.forEach((item, index) => {
+                item.textContent = `(${index}) ${item.textContent}`;
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!-- 4) დაწერეთ ფუნქცია რომლის საშვალებითაც html-ში ელემენტებს შეუცვლით სტაილს -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="p">hi</p>
+    <h1 id="h1">hi</h1>
+    <h5 id="h5">hi</h5>
+
+    <button onclick="fun()">heloooo</button>
+
+    <script>
+        function fun() {
+            document.getElementById("p").style.color = "blue";
+            document.getElementById("h1").style.color = "green";
+            document.getElementById("h5").style.color = "red";
+        }
+    </script>
+
+
+</body>
+
+</html>

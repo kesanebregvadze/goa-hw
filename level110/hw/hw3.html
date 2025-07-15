@@ -1,0 +1,43 @@
+<!-- შექმენი ახალი ელემენტი და დაამატე ის გვერდზე -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            padding: 20px;
+            border: 2px dashed #444;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="addElement()">click</button>
+
+    <div id="container">
+        <h2>heloooo! am kesoooo</h2>
+    </div>
+
+    <script>
+        function addElement() {
+
+            const newPara = document.createElement("p");
+            newPara.textContent = "hi!";
+            newPara.style.color = "darkgreen";
+
+            document.getElementById("container").appendChild(newPara);
+        }
+    </script>
+</body>
+
+</html>

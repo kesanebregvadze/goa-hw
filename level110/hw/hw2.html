@@ -1,0 +1,47 @@
+<!-- მოძებნე ყველა ელემენტი კლასით და შეცვალე მათი ფონი -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .color-box {
+            padding: 20px;
+            margin: 10px;
+            background-color: lightblue;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    </head>
+
+    <body>
+        <div class="color-box">Box 1</div>
+        <div class="color-box">Box 2</div>
+        <div class="color-box">Box 3</div>
+
+        <button onclick="fun()">cick!</button>
+
+        <script>
+            function fun() {
+                const elements = document.querySelectorAll('.color-box');
+                elements.forEach((el) => {
+                    el.style.backgroundColor = 'lightcoral';
+                });
+            }
+        </script>
+    </body>
+
+</html>
+</body>
+
+</html>

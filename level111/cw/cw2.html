@@ -1,4 +1,3 @@
-<!-- 1) mitsvdit elementebs document-it js shi -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,10 +8,14 @@
 </head>
 
 <body>
-<p id="p">hi</p>
-<script>
-    document.getElementById("p")
-</script>
+    <h1 id="h1">hi</h1>
+    <button onclick="fun()">click</button>
+
+    <script>
+        function fun() {
+            document.getElementById("h1").innerText = "helloo";
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,26 @@
+<!-- იპოვე ღილაკი და დაადე click event რომ ტექსტი შეიცვალოს
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="message">hi</h2>
+    <button id="Btn">click</button>
+
+    <script>
+
+      const button = document.getElementById("Btn");
+
+
+      button.addEventListener("click", function () {
+        const message = document.getElementById("message");
+        message.textContent = "helooooooooooo am kesoooooo";
+      });
+    </script>
+
+</body>
+</html>

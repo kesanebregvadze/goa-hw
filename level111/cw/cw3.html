@@ -1,0 +1,42 @@
+<!-- 3) დაწერეთ ფუნქცია რომელი შეამოწმებს მომხმარებლის ასაკს.
+
+თუ ისაა  <13, გამოიტანოს პატარა. თუ მომხმარებელი >14 და <18, მაშინ გამოიტანოს თინეიჯერი. თუ მომხმარებელი ასაკი >18 მაშინ გამოიტანოს ზრდასრული. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>hi!</h2>
+
+    <input type="number" id="age" placeholder="შეიყვანე ასაკი">
+    <button onclick="fun()">helooo</button>
+
+    <p id="p"></p>
+
+    <script>
+        function fun() {
+            const age = parseInt(document.getElementById("age").value);
+            let message = "";
+
+            if (age < 13) {
+                message = "შენ ხარ პატარა";
+            } else if (age > 14 && age < 18) {
+                message = "შენ ხარ თინეიჯერი";
+            } else if (age > 18) {
+                message = "შენ ხარ ზრდასრული";
+            }
+
+            document.getElementById("p").innerText = message;
+        }
+    </script>
+
+
+</body>
+
+</html>
