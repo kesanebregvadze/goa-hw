@@ -1,0 +1,60 @@
+<!-- 1) ააწყეთ ვებსაიტი ნებისმიერ თემაზე. html, tailwind css, js -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Მაღაზია - პროდუქტი</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6">
+
+    <header class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Მაღაზია</h1>
+        <div class="text-gray-700">
+            კალათა: <span id="cartCount" class="font-semibold">0</span>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="font-semibold text-lg mb-2">ჩანთა</h2>
+            <img src="OIP (1).webp" alt="" class="h-[200px]">
+            <button onclick="addToCart()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                კალათაში დამატება
+            </button>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="font-semibold text-lg mb-2">საწოლი</h2>
+            <img src="Untitled-design-3-680x850.png.webp" alt="" class="h-[200px] ">
+            <button onclick="addToCart()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                კალათაში დამატება
+            </button>
+        </div>
+
+        <div class="bg-white p-4 rounded shadow">
+            <h2 class="font-semibold text-lg mb-2">კამერა</h2>
+            <img src="OIP.webp" alt="" class="h-[200px]">
+            <button onclick="addToCart()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
+                კალათაში დამატება
+            </button>
+        </div>
+
+    </main>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cartCount').textContent = cartCount;
+        }
+    </script>
+
+</body>
+
+</html>
