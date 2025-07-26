@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>მაღაზია</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <h1 class="text-2xl font-bold mb-4 text-center">🛒 მაღაზია</h1>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-white p-4 rounded shadow">
+      <h3 class="text-lg font-semibold">ჩანთა</h3>
+      <p>$8.50</p>
+      <button onclick="add(8.5)" class="mt-2 bg-green-600 text-white px-4 py-2 rounded">კალათაში</button>
+    </div>
+    <div class="bg-white p-4 rounded shadow">
+      <h3 class="text-lg font-semibold">მაგიდა</h3>
+      <p>$12.50</p>
+      <button onclick="add(12.5)" class="mt-2 bg-green-600 text-white px-4 py-2 rounded">კალათაში</button>
+    </div>
+  </div>
+
+  <div class="mt-8">
+    <h2 class="text-xl font-bold">ჯამი: <span id="total">$0.00</span></h2>
+  </div>
+
+  <script>
+    let total = 0;
+    function add(price) {
+      total += price;
+      document.getElementById("total").textContent = `$${total.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>

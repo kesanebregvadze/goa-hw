@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ჯუჯა ძაღლები</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-yellow-50 p-6">
+
+  <h1 class="text-3xl font-bold text-center mb-8 text-orange-700">🐾 ჯუჯა ძაღლების გალერეა</h1>
+
+  <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  </div>
+
+  <script>
+    const dogs = [
+      {
+        name: "ჯუჯა პუდელი",
+        image: "https://placedog.net/400/300?id=1",
+        description: "ჭკვიანი და მხიარული მეგობარი ოჯახისთვის."
+      },
+      {
+        name: "პომერანული შპიცი",
+        image: "https://placedog.net/400/300?id=2",
+        description: "მინიატურული ლომის მსგავსი გარეგნობა და ცოცხალი ხასიათი."
+      },
+      {
+        name: "იორკშირ ტერიერი",
+        image: "https://placedog.net/400/300?id=3",
+        description: "ერთგული, აქტიური და სმარტფონის ჩანთაშიც ეტევა!"
+      }
+    ];
+
+    const gallery = document.getElementById("gallery");
+    dogs.forEach(dog => {
+      const div = document.createElement("div");
+      div.className = "bg-white rounded shadow p-4 hover:shadow-lg transition";
+
+      div.innerHTML = `
+        <img src="${dog.image}" alt="${dog.name}" class="w-full h-48 object-cover rounded mb-4">
+        <h2 class="text-xl font-semibold text-pink-700">${dog.name}</h2>
+        <p class="text-gray-600 mt-2">${dog.description}</p>
+      `;
+
+      gallery.appendChild(div);
+    });
+  </script>
+
+</body>
+</html>

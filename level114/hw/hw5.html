@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>todo list</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">📝todo list</h1>
+    <div class="flex mb-4">
+      <input type="text" id="taskInput" placeholder="ახალი დავალება..." class="flex-grow p-2 border rounded-l">
+      <button onclick="addTask()" class="bg-blue-500 text-white p-2 rounded-r">დამატება</button>
+    </div>
+    <ul id="taskList" class="list-disc pl-5 space-y-2"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const input = document.getElementById("taskInput");
+      const taskText = input.value.trim();
+      if (taskText === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = taskText;
+      li.className = "flex justify-between items-center bg-gray-50 p-2 rounded";
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "❌";
+      delBtn.className = "text-red-500 ml-4";
+      delBtn.onclick = () => li.remove();
+
+      li.appendChild(delBtn);
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2025 წლის კალენდარი</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+  <div class="max-w-6xl mx-auto space-y-10">
+    <script>
+      function generateMonth(name, days, startBlank) {
+        let html = `
+        <div class="bg-white rounded-lg shadow-md p-4">
+          <h2 class="text-lg font-bold text-center mb-2">${name} 2025</h2>
+          <div class="grid grid-cols-7 gap-2 text-center text-sm font-medium">
+            <div>კვ</div><div>ორ</div><div>სამ</div><div>ოთხ</div><div>ხუთ</div><div>პარ</div><div>შაბ</div>
+          </div>
+          <div class="grid grid-cols-7 gap-2 text-center text-gray-700 mt-2">
+        `;
+        for (let i = 0; i < startBlank; i++) {
+          html += `<div class="text-gray-300"></div>`;
+        }
+        for (let day = 1; day <= days; day++) {
+          html += `<div>${day}</div>`;
+        }
+        html += `</div></div>`;
+        return html;
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const months = [
+          ["იანვარი", 31, 2],
+          ["თებერვალი", 28, 5],
+          ["მარტი", 31, 5],
+          ["აპრილი", 30, 1],
+          ["მაისი", 31, 3],
+          ["ივნისი", 30, 6],
+          ["ივლისი", 31, 1],
+          ["აგვისტო", 31, 4],
+          ["სექტემბერი", 30, 0],
+          ["ოქტომბერი", 31, 2],
+          ["ნოემბერი", 30, 5],
+          ["დეკემბერი", 31, 0],
+        ];
+        const container = document.querySelector(".max-w-6xl");
+        months.forEach(m => container.innerHTML += generateMonth(m[0], m[1], m[2]));
+      });
+    </script>
+  </div>
+</body>
+</html>
