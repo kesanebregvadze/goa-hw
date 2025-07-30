@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-6">
+
+    <input type="search"
+        class="border-2 border-gray-500 rounded-md w-full max-w-md px-4 py-2 "
+        id="s1" placeholder="Search names..." name="search" />
+
+    <div id="nameSearch" class="space-y-2"></div>
+
+    <script>
+        const data = [
+            {
+                id: "s1",
+                name: "luka razmadze"
+            },
+            {
+                id: "s1",
+                name: "keso bregvadze"
+            },
+            {
+                id: "s1",
+                name: "luka datiashvili"
+            },
+            {
+                id: "s1",
+                name: "davit grdzeishvili"
+            },
+            {
+                id: "s1",
+                name: "konstantine papava"
+            },
+            {
+                id: "s1",
+                name: "andria janezashvili"
+            }
+        ];
+
+        const searchInput = document.getElementById("s1");
+        const resultDiv = document.getElementById("nameSearch");
+
+        renderNames(data);
+
+        searchInput.addEventListener("input", (event) => {
+            const value = event.target.value.toLowerCase();
+            const filteredData = data.filter(item =>
+                item.name.toLowerCase().includes(value)
+            );
+            renderNames(filteredData);
+        });
+
+        function renderNames(list) {
+            resultDiv.innerHTML = "";
+            list.map(item => {
+                const div = document.createElement("div");
+                div.innerText = item.name;
+                div.className = "bg-red-100 rounded-md p-2";
+                resultDiv.appendChild(div);
+            });
+        }
+    </script>
+</body>
+
+</html>

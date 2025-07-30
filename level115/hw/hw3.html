@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Name Search</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-blue-50 flex flex-col items-center justify-center min-h-screen p-6">
+
+  <div class="mb-4 w-full max-w-sm">
+    <input
+      type="text"
+      id="colorSearchh"
+      placeholder="Type color name..."
+      class="w-full p-2 border border-blue-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+      autocomplete="off"
+    />
+  </div>
+
+  <div id="colorSearch" class="space-y-2 w-full max-w-sm"></div>
+
+  <script>
+    const data = [
+      { color: "red" },
+      { color: "green" },
+      { color: "yellow" },
+      { color: "blue" },
+      { color: "orange" },
+      { color: "purple" },
+      { color: "pink" },
+      { color: "brown" },
+      { color: "black" },
+      { color: "white" },
+      { color: "gray" },
+      { color: "cyan" },
+      { color: "magenta" }
+    ];
+
+    const input = document.getElementById("colorSearchh");
+    const resultDiv = document.getElementById("colorSearch");
+
+    function renderColors(list) {
+      resultDiv.innerHTML = "";
+      if (list.length === 0) {
+        resultDiv.textContent = "No matches found.";
+        return;
+      }
+      list.forEach(item => {
+        const div = document.createElement("div");
+        div.textContent = item.color;
+        div.className = "bg-white p-3 rounded-md shadow text-blue-800 font-medium";
+        resultDiv.appendChild(div);
+      });
+    }
+
+    input.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+      if (query === "") {
+        renderColors([]);
+        return;
+      }
+      const filtered = data.filter(item => item.color.toLowerCase().includes(query));
+      renderColors(filtered);
+    });
+
+    renderColors([]);
+  </script>
+
+</body>
+</html>

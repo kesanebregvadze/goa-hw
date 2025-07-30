@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search by Profession</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6">
+
+  <div class="mb-4 w-full max-w-sm">
+    <input
+      type="text"
+      id="professionInput"
+      placeholder="შეიყვანე პროფესია (მაგ: პროგრამისტი)"
+      class="w-full p-2 border border-gray-400 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div id="professionResults" class="space-y-2 w-full max-w-sm"></div>
+
+  <script>
+    const data = [
+      { 
+        name: "ნინო გელაშვილი", 
+        profession: "პროგრამისტი" 
+    },
+      { 
+        name: "გიორგი კაპანაძე", 
+        profession: "დიზაინერი" 
+
+      },
+      { 
+        name: "თამარ მენაბდე", 
+        profession: "პროგრამისტი" 
+
+      },
+      { 
+        name: "ლაშა ვეკუა", 
+        profession: "მასწავლებელი" 
+
+      },
+      { 
+        name: "სალომე ძიძიგური", 
+        profession: "ანგარიშთმცოდნე"
+
+       },
+      { 
+        name: "ანა მიქელაძე",
+         profession: "დიზაინერი" 
+
+      },
+      { 
+        name: "დავით ხარებავა", 
+        profession: "პროგრამისტი" 
+
+      }
+    ];
+
+    const input = document.getElementById("professionInput");
+    const resultsDiv = document.getElementById("professionResults");
+
+    function renderResults(list) {
+      resultsDiv.innerHTML = "";
+      if (list.length === 0) {
+        resultsDiv.textContent = "შედეგები არ მოიძებნა.";
+        return;
+      }
+      list.forEach(person => {
+        const div = document.createElement("div");
+        div.textContent = person.name;
+        div.className = "bg-white p-3 rounded shadow text-gray-800";
+        resultsDiv.appendChild(div);
+      });
+    }
+
+    input.addEventListener("input", () => {
+      const query = input.value.trim().toLowerCase();
+      if (query === "") {
+        renderResults([]);
+        return;
+      }
+
+      const filtered = data.filter(person =>
+        person.profession.toLowerCase().includes(query)
+      );
+
+      renderResults(filtered);
+    });
+
+    renderResults([]);
+  </script>
+
+</body>
+</html>
