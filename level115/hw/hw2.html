@@ -1,85 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>City Search</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-
-        input {
-            padding: 8px;
-            font-size: 16px;
-            width: 300px;
-        }
-
-        .result {
-            margin-top: 10px;
-            background: #e0f7fa;
-            padding: 10px;
-            border-radius: 5px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<body class="bg-gray-300 items-center justify-center p-6">
 
-<body>
+  <div class="border-5 border-blue-300 rounded-md  flex items-center justify-center">
+    <input type="search" id="citySearch" placeholder="Enter city"
+      class="p-2 border border-blue-300 rounded w-[250px]" />
+  </div>
 
-    <input type="search" id="citySearch" placeholder="Type city name" />
-    <div id="nameSearch"></div>
+  <div id="nameSearch"></div>
 
-    <script>
-        const data = [
-            {
-                id: "1",
-                name: "davit",
-                city: "Tbilisi"
-            },
-            {
-                id: "2",
-                name: "kesane",
-                city: "Tbilisi"
-            },
-            {
-                id: "3",
-                name: "konstantine",
-                city: "Tbilisi"
-            },
-            {
-                id: "4",
-                name: "luka razmadze",
-                city: "qutaisi"
-            }
-        ];
+  <script>
+    const data = [
+      { 
+        id: "1", 
+        name: "ana", 
+        city: "svaneti" 
+    },
+      { 
+        id: "2", 
+        name: "kesane", 
+        city: "Tbilisi" 
+    },
+      { 
+        id: "3",
+        name: "nika", 
+        city: "Wiatura" 
+    },
+      { 
+        id: "4", 
+        name: "salome", 
+        city: "tbilisi" 
+    }
+    ];
 
-        const cityInput = document.getElementById("citySearch");
-        const nameSearchDiv = document.getElementById("nameSearch");
+    const searchInput = document.getElementById("citySearch");
+    const resultDiv = document.getElementById("nameSearch");
 
-        cityInput.addEventListener("input", () => {
-            const searchText = cityInput.value.trim().toLowerCase();
-            nameSearchDiv.innerHTML = "";
+    searchInput.addEventListener("input", (event) => {
+      const value = event.target.value.trim().toLowerCase();
+      const filtered = data.filter(person => person.city.toLowerCase().includes(value));
+      renderNames(filtered);
+    });
 
-            if (!searchText) return;
-
-            const filtered = data.filter(person => person.city.toLowerCase().includes(searchText));
-
-            if (filtered.length === 0) {
-                nameSearchDiv.textContent = "No matches found.";
-                return;
-            }
-
-            filtered.forEach(person => {
-                const div = document.createElement("div");
-                div.className = "result";
-                div.textContent = person.name;
-                nameSearchDiv.appendChild(div);
-            });
-        });
-    </script>
+    function renderNames(list) {
+      resultDiv.innerHTML = "";
+      if (list.length === 0) {
+        resultDiv.textContent = "ჩაწერე ქალაქის სახელი.";
+        return;
+      }
+      list.forEach(item => {
+        const div = document.createElement("div");
+        div.innerText = item.name;
+        div.className = "bg-white p-3 rounded-md shadow text-blue-800 font-medium";
+        resultDiv.appendChild(div);
+      });
+    }
+  </script>
 
 </body>
-
 </html>

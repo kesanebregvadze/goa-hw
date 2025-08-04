@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Search by Profession</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
-<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6">
+    <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6">
+    <div class="mb-4 w-full max-w-sm">
+        <input type="text" placeholder="შეიყვანეთ პროფესია..." id="input"
+            class="space-y-2 w-full max-w-sm mt-4 w-full p-2 border border-gray-400 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div id="resultdiv"></div>
+    </div>
 
-  <div class="mb-4 w-full max-w-sm">
-    <input
-      type="text"
-      id="professionInput"
-      placeholder="შეიყვანე პროფესია (მაგ: პროგრამისტი)"
-      class="w-full p-2 border border-gray-400 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-  </div>
+    <script>
+        const data = [
+            {
+                name: "ნიკა ბრეგვაძე",
+                profession: "სისტემური ადმინისტრატორი"
+            },
+            {
+                name: "ანა გულედანი",
+                profession: "QA ტესტერი"
 
-  <div id="professionResults" class="space-y-2 w-full max-w-sm"></div>
+            },
+            {
+                name: "სალომე თოდაძე",
+                profession: "გაყიდვების მენეჯერი"
 
-  <script>
-    const data = [
-      { 
-        name: "ნინო გელაშვილი", 
-        profession: "პროგრამისტი" 
-    },
-      { 
-        name: "გიორგი კაპანაძე", 
-        profession: "დიზაინერი" 
+            },
+            {
+                name: "მაია ბაზაევა",
+                profession: " მუსიკის მასწავლებელი"
 
-      },
-      { 
-        name: "თამარ მენაბდე", 
-        profession: "პროგრამისტი" 
+            },
+            {
+                name: "კარლო ბრეგვაძე",
+                profession: "ცეკვის მასწავლებელი"
 
-      },
-      { 
-        name: "ლაშა ვეკუა", 
-        profession: "მასწავლებელი" 
+            },
+            {
+                name: "მარინა ბახტურიძე",
+                profession: "ბაღის მასწავლებელი"
 
-      },
-      { 
-        name: "სალომე ძიძიგური", 
-        profession: "ანგარიშთმცოდნე"
+            },
+            {
+                name: "შალვა ბაზაევი",
+                profession: "ელექტო მექანიკოსი"
 
-       },
-      { 
-        name: "ანა მიქელაძე",
-         profession: "დიზაინერი" 
+            },
+            {
+                name: "გოგა ბრეგვაძე",
+                profession: "სუხიშვილების მოცეკვავე"
 
-      },
-      { 
-        name: "დავით ხარებავა", 
-        profession: "პროგრამისტი" 
+            },
+        ];
 
-      }
-    ];
+        const input = document.getElementById("input");
+        const resultdiv = document.getElementById("resultdiv");
+        input.addEventListener("input", (event) => {
+            const value = event.target.value.trim().toLowerCase();
+            const filtered = data.filter(item => item.profession.toLowerCase().includes(value));
+            rendernames(filtered);
 
-    const input = document.getElementById("professionInput");
-    const resultsDiv = document.getElementById("professionResults");
+        });
+        function rendernames(list) {
+            resultdiv.innerHTML = "";
+            if (list.length === 0) {
+                resultdiv.innerHTML = "სხვა პროფესია ჩაწერეთ.";
+                return;
+            }
+            list.map(item => {
+                const div = document.createElement("div");
+                div.innerHTML = item.name;
+                div.classname = "bg-pink-200 p-3 rounded-md shadow text-blue-800 font-medium";
+                resultdiv.appendChild(div);
+                const filtered = data.filter(person => {
+                    person.profession.toLowerCase();
 
-    function renderResults(list) {
-      resultsDiv.innerHTML = "";
-      if (list.length === 0) {
-        resultsDiv.textContent = "შედეგები არ მოიძებნა.";
-        return;
-      }
-      list.forEach(person => {
-        const div = document.createElement("div");
-        div.textContent = person.name;
-        div.className = "bg-white p-3 rounded shadow text-gray-800";
-        resultsDiv.appendChild(div);
-      });
-    }
+                });
 
-    input.addEventListener("input", () => {
-      const query = input.value.trim().toLowerCase();
-      if (query === "") {
-        renderResults([]);
-        return;
-      }
 
-      const filtered = data.filter(person =>
-        person.profession.toLowerCase().includes(query)
-      );
+            });
+            
 
-      renderResults(filtered);
-    });
 
-    renderResults([]);
-  </script>
+        };
 
+    </script>
 </body>
 </html>
+
+    

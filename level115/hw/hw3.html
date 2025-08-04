@@ -1,74 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Color Name Search</title>
+  <title>document</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body { font-family: Arial, sans-serif; }
-  </style>
-</head>
-<body class="bg-blue-50 flex flex-col items-center justify-center min-h-screen p-6">
 
-  <div class="mb-4 w-full max-w-sm">
-    <input
-      type="text"
-      id="colorSearchh"
-      placeholder="Type color name..."
-      class="w-full p-2 border border-blue-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
-      autocomplete="off"
-    />
+</head>
+
+<body class="bg-blue-50 flex flex-col items-center justify-center min-h-screen p-6">
+  <div class="border-4 border-blue-300 rounded-md  flex items-center justify-center">
+    <input type="text" id="colorsearch" class="p-2 border border-blue-300 rounded w-[250px]"
+      placeholder="enter favourite color">
   </div>
 
-  <div id="colorSearch" class="space-y-2 w-full max-w-sm"></div>
+  <div id="rsearch" class="space-y-2 w-full max-w-sm"></div>
 
   <script>
     const data = [
-      { color: "red" },
-      { color: "green" },
-      { color: "yellow" },
-      { color: "blue" },
-      { color: "orange" },
-      { color: "purple" },
-      { color: "pink" },
-      { color: "brown" },
-      { color: "black" },
-      { color: "white" },
-      { color: "gray" },
-      { color: "cyan" },
-      { color: "magenta" }
+      {
+        item: "კაბა",
+        color: "red"
+      },
+      {
+        item: "ვაშლი",
+
+        color: "green"
+      },
+      {
+        item: "ბანანი",
+
+        color: "yellow"
+      },
+      {
+        item: "საბანი",
+
+        color: "blue"
+      },
+      {
+        item: "ატამი",
+
+        color: "orange"
+      },
+      {
+        item: "ია",
+
+        color: "purple"
+      },
+      {
+        item: "შარვალი",
+
+        color: "pink"
+      },
+      {
+        item: "შოკოლადი",
+
+        color: "brown"
+      },
+      {
+        item: "ჩანთა",
+
+        color: "black"
+      },
+      {
+        item: "ბალიში",
+
+        color: "white"
+      },
+      {
+        item: "დივანი",
+
+        color: "gray"
+      },
+      {
+        item: "მანქანა",
+
+        color: "cyan"
+      },
+
     ];
+   
+     const colorsearch = document.getElementById("colorsearch");
+  const rsearch = document.getElementById("rsearch");
 
-    const input = document.getElementById("colorSearchh");
-    const resultDiv = document.getElementById("colorSearch");
+  colorsearch.addEventListener("input", (event) => {
+    const value = event.target.value.trim().toLowerCase();
 
-    function renderColors(list) {
-      resultDiv.innerHTML = "";
-      if (list.length === 0) {
-        resultDiv.textContent = "No matches found.";
-        return;
-      }
+    const filtered = data.filter(item => item.color.toLowerCase().includes(value));
+    renderNames(filtered);
+  });
+
+  function renderNames(list) {
+    rsearch.innerHTML = "";
+    if (list.length === 0) {
+      rsearch.textContent = "ეგ ფერი არ არსებობს.";
+      return;
+    }
       list.forEach(item => {
         const div = document.createElement("div");
-        div.textContent = item.color;
+        div.innerText = item.item;
         div.className = "bg-white p-3 rounded-md shadow text-blue-800 font-medium";
-        resultDiv.appendChild(div);
+        rsearch.appendChild(div);
       });
     }
 
-    input.addEventListener("input", () => {
-      const query = input.value.trim().toLowerCase();
-      if (query === "") {
-        renderColors([]);
-        return;
-      }
-      const filtered = data.filter(item => item.color.toLowerCase().includes(query));
-      renderColors(filtered);
-    });
 
-    renderColors([]);
   </script>
 
 </body>
+
 </html>

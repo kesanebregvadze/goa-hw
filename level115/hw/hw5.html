@@ -1,78 +1,63 @@
-<!-- 5:
-შექმენი input ველი და div.
-მომხმარებელი ჩაწერს მინიმალურ ქულას (მაგალითად 80).
-data მასივიდან უნდა გამოჩნდეს მხოლოდ იმ მოსწავლეების სახელები, ვისაც ქულა ამაზე მეტია.                                       -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen p-6">
-
     <div class="mb-4 w-full max-w-sm">
-        <input type="number" id="scoreInput" placeholder="შეიყვანე მინიმალური ქულა"
-            class="w-full p-2 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <input type="text" placeholder="შეიყვანეთ ქულა..." id="input"
+            class="space-y-2 w-full max-w-sm mt-4 w-full p-2 border border-gray-400 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <div id="resultdiv"></div>
     </div>
-
-    <div id="resultDiv" class="space-y-2 w-full max-w-sm"></div>
-
     <script>
         const data = [
             {
-                name: "ანა",
-                score: 78
+                name: "davit",
+                points: 99
             },
             {
-                name: "გიორგი",
-                score: 85
+                name: "kesane",
+                points: 98
             },
             {
-                name: "მარიამი",
-                score: 92
+                name: "nuki",
+                points: 73
             },
             {
-                name: "ლუკა",
-                score: 69
-            },
-            {
-                name: "ნინო",
-                score: 88
-            },
-            {
-                name: "დავითი",
-                score: 74
+                name: "giorgi",
+                points: 71
             }
         ];
-
-        const input = document.getElementById("scoreInput");
-        const resultDiv = document.getElementById("resultDiv");
-
-        input.addEventListener("input", () => {
-            const minScore = parseInt(input.value);
-            if (!isNaN(minScore)) {
-                const filtered = data.filter(student => student.score > minScore);
-                render(filtered);
+        const input = document.getElementById("input");
+        const resultdiv = document.getElementById("resultdiv");
+        input.addEventListener("input", (event) => {
+            const input= parseInt(event.target.value);
+            if (!isNaN(input)) {
+                const filteredData = data.filter(item => item.points > input);
+                renderNames(filteredData);
             } else {
-                render([]);
+                renderNames([]);
             }
         });
 
-        function render(list) {
-            resultDiv.innerHTML = "";
-            list.forEach(student => {
+        function renderNames(list) {
+            resultdiv.innerHTML = "";
+            list.forEach(item => {
                 const div = document.createElement("div");
-                div.innerText = student.name;
-                div.className = "bg-white p-3 rounded-md shadow text-blue-700 font-semibold";
-                resultDiv.appendChild(div);
+                div.innerText = item.name;
+                div.className = "bg-white p-3 rounded-md shadow text-blue-800 font-medium";
+                resultdiv.appendChild(div);
             });
         }
-    </script>
 
+
+    </script>
 </body>
 
 </html>
