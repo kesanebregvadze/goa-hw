@@ -1,0 +1,69 @@
+<!-- Level 119
+
+შექმენით ვებსაიტი ნასწავლი მასალით
+
+-- უნდა ჰქონდეს Tailwind რესპონსივი
+
+-- უნდა ჰქონდეს მინიმუმ 2 გვერდი
+
+-- უნდა იყოს გამოყენებული flexbox(tailwind)-ი თქვენს საიტიში (რამე card-ები)
+
+-- რაზე უნდა იყოს 1 გევრდი - აირჩიეთ რაიმე თემა და გაუკეთეთ თემის შესავალი მთავარი ნაწილი და შეჯამება
+
+-- მეორე გვერდზე უნდა იყოს Login form(tailwind ით გაალამაზეთ) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="bg-pink-100  flex justify-center items-center flex-col sm:flex-row sm:bg-blue-100 flex ">
+        <form>
+    <label for="first name">first name</label>
+    <input type="first name"  id="first name" class="border rounded-md p-1">
+<br>
+<label for="last name">last name:</label>
+<input type="last name"  id="last name" class="border rounded-md p-1">
+<br>
+<label for="e-mail">e-mail</label>
+<input type="e-mail"  id="e-mail" class="border rounded-md p-1">
+<br>
+<label for="password">password</label>
+<input type="password"  id="password" class="border rounded-md p-1">
+<br>
+<label for="date of Birth">date of Brth</label>
+<input type="date of Birth"  id="date of Birth">
+<br>
+<label>gender:</label>
+<input type="radio" id="male" name="gender">
+
+<label for="male">male:</label>
+
+<input type="radio" id="female" name="female">
+
+<label for="female">female:</label>
+
+<input type="radio" >others:</input>
+<br>
+<label for="mobil">mobil:</label>
+<input type="number" id="mobil" name="mobil" class="border rounded-md p-1">
+<br>
+<label for="adres">adres:</label>
+<textarea id="adres" class="border rounded-md p-1">
+
+</textarea>
+<br>
+<input type="submit" class="bg-blue-100  flex justify-center items-center flex-col sm:flex-row sm:bg-pink-100 flex p-4 rounded-full hover:cursor-pointer">
+<input type="reset" class="bg-pink-400  flex justify-center items-center flex-col sm:flex-row sm:bg-blue-400 flex p-4 rounded-full hover:cursor-pointer">
+</form>
+    </div>
+
+</body>
+
+</html>
