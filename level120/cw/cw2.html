@@ -1,0 +1,60 @@
+<!-- 2) Responsive footer
+შექმენით რესპონსიული footer 
+და უნდა გქონდეთ  მინიმუმ  3-4 სექცია 
+1-კომპანია 2-დახმარება 3-სოციალური ქსელები 4 დაბლითა ნაწილი ვინ შექმნა საიტი
+მობილურზე ეს ყველა სექცია ინქბა 1 სვეტზე, ტაბლეტებზე ანუ (sm) ზე იქნება 2 სვეტი. ლეპტოპზე 3 სვეტი (lg) -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body>
+    <footer>
+        <div class="grid grid-cols sm:grid-cols-1  md:grid-cols-2 lg:grid-cols-3  bg-orange-300">
+
+            <div class="w-[400px] gap-5 ">
+                <h1 class="text-1xl">ნავიგაცია</h1>
+                <hr>
+                <p class="hover:cursor-pointer">პერსონალურ მონაცემთა დაცვის პოლიტიკა</p>
+                <p class="hover:cursor-pointer">ჩვენ შესახებ</p>
+                <p class="hover:cursor-pointer">წესები და პირობები</p>
+                <p class="hover:cursor-pointer">მიწოდების სერვისი</p>
+                <p class="hover:cursor-pointer">კარიერა</p>
+            </div>
+            <div class="w-[400px] gap-5 ">
+                <h1 class="text-1xl">გადახდები</h1>
+                <hr>
+                <p class="hover:cursor-pointer">Setanta Sports</p>
+                <p class="hover:cursor-pointer">გადახდის მეთოდები</p>
+                <p class="hover:cursor-pointer">გარანტია</p>
+                <p class="hover:cursor-pointer">განვადება</p>
+                <p class="hover:cursor-pointer">ნივთის დაბრუნება</p>
+                <p class="hover:cursor-pointer">ნივთის ონლაინ ყიდვის ინსტრუქცია</p>
+            </div>
+            <div class="w-[400px] gap-5 ">
+                <h1 class="text-1xl">გამოგვყევი</h1>
+                <hr>
+                <a href="https://www.facebook.com/zoommerge/?ref=page_internal">facebook</a><br>
+                <a href="https://www.youtube.com/user/WwwZoommerGe">youtube</a><br>
+                <a href="https://www.instagram.com/zoommer.ge/?hl=en">instagram</a><br>
+                <a href="https://www.tiktok.com/@zoommer.ge">tiktok</a><br>
+            </div>
+            <div class="w-[400px] gap-5 ">
+                <h1 class="text-1xl">კონტაქტი</h1>
+                <hr>
+                <a href="mailto:info@zoommer.ge">info@zoommer.ge</a><br>
+                <a href="tel:+995 32 2 60 30 60">tel:+995 32 2 60 30 60</a><br>
+                <a href="https://zoommer.ge/branches">ფილიალები</a><br>
+                <a href="https://zoommer.ge/info/corporate-sales">კორპორატული გაყიდვები</a><br>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
