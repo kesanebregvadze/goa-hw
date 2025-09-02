@@ -1,0 +1,29 @@
+<!-- // 4)შექმენი მასივი ობიექტებისგან, სადაც თითოეულ ობიექტს აქვს ასაკი და სახელი. გამოიყენე forEach, რათა გაფილტროთ მხოლოდ ის რომელთა სახელი "x" არის.
+;
+// -- > // შედეგი: [{ name: "x", age: 30 }, { name: "x", age: 28 }] -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        const users = [
+            { name: "Alice", age: 25 },
+            { name: "x", age: 30 },
+            { name: "Bob", age: 35 },
+            { name: "x", age: 28 }
+        ]
+        object.key(users).forEach(key => {
+            if (users[key].name === 'x')
+                console.log(users[key])
+        });
+    </script>
+</body>
+
+</html>

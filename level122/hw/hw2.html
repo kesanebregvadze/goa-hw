@@ -1,0 +1,38 @@
+<!-- შექმენი ობიექტი ისეთი სტრუქტურით:
+
+let person = {
+  name: "Davit",
+  age: 30,
+  profession: "Developer"
+};
+
+
+გამოიყენე Object.keys() და forEach() ციკლი, რათა კონსოლში თითოეულ ველზე დაბეჭდო შემდეგი სახით:
+
+Key: name, Value: Davit
+Key: age, Value: 30 
+...
+
+
+📌 მიზანი: ობიექტის გასაღებების გადავლა და კონსოლში გასაღები-შედეგის წყვილის ჩვენება.-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let person = {
+      name: "Davit",
+      age: 30,
+      profession: "Developer"
+    };
+    Object.keys(person).forEach((key) => {console.log(`key: ${key} , value: ${person[key]}`)})
+  </script>
+</body>
+
+</html>

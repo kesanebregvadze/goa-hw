@@ -1,0 +1,38 @@
+<!-- 4:
+შექმენი ორი მასივი:
+
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+
+გამოიყენე for ციკლი, რათა შეაერთო ორივე მასივი ერთ ახალ მასივად arr3, არ გამოიყენო concat() ან spread.
+
+📌 მიზანი: for ციკლის პრაქტიკა მასივების შეერთებისთვის. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [1, 2, 3];
+        let arr2 = [4, 5, 6];
+        let arr3 = []
+        for (let i = 0; i < arr.length; i++) {
+            arr3.push(arr[i])
+
+        }
+        for (let i = 0; i < arr2.length; i++) {
+            arr3.push(arr2[i])
+            
+
+        }
+        console.log(arr3)
+    </script>
+</body>
+
+</html>

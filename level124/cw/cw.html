@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Dogg(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        class Dog {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            talk() {
+                return "wof";
+            }
+
+            greeting() {
+                return `გამარჯობა მოგესალემებათ ${this.name}`;
+            }
+            hi(){
+                const arr = [1, 3, 4, 5,6,7,8,9,10].forEach((item, index) => {
+            console.log(item);
+          });
+            }
+        }
+        const Dog1 = new Dog("შოკი", 13);
+        const Dog2 = new Dog("კერი", 13);
+        console.log(Dog1.talk());
+        console.log(Dog1.greeting());
+        console.log(Dog2.greeting());
+
+        const myforeach = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]; (item, index) => {
+            console.log(item, index);
+        }
+        class Cat {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            talk() {
+                return "meow";
+            }
+
+            greeting() {
+                return `გამარჯობა მოგესალემებათ ${this.name}`;
+            }
+        }
+        const cat1 = new Cat("ნინა", 2);
+
+        const cat2 = new Cat("მიმი", 4);
+        console.log(cat1.talk());
+        console.log(cat1.greeting());
+        console.log(cat2.greeting());
+
+
+
+
+
+    </script>
+</body>
+
+</html>

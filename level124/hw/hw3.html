@@ -1,0 +1,32 @@
+<!-- // დავალება 3:
+// შექმენი მასივი, რომელიც შეიცავს მომხმარებლების ობიექტებს სახელით და სტატუსით (მაგ: "active", "inactive"). გამოიყენე forEach, რათა შექმნა ახალი მასივი მხოლოდ აქტიური მომხმარებლებით. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const users = [
+            { name: 'gio', status: 'active' },
+            { name: 'davit', status: 'inactive' },
+            { name: 'niko', status: 'active' },
+            { name: 'ioane', status: 'inactive' },
+        ];
+        const activeUsers = []
+        users.forEach(users => {
+            if (users.status === 'active') {
+                activeUsers.push(users)
+
+            }
+
+        });
+        console.log(activeUsers)
+    </script>
+</body>
+
+</html>

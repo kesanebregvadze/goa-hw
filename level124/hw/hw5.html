@@ -1,0 +1,38 @@
+<!-- // დავალება 5:
+// შექმენი კლასი სახელად Student, რომელსაც ექნება სახელი და ქულა. დაამატე მეთოდი, რომელიც შეამოწმებს, გადალახა თუ არა სტუდენტმა გამოცდა (მაგ: ქულა 50-ზე მეტი უნდა იყოს). შექმენი მასივი სტუდენტების ობიექტებით და forEach-ით დაბეჭდე, ვინ ჩააბარა და ვინ არა. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Student {
+            constructor(name, score) {
+                this.name = name;
+                this.score = score;
+            }
+        }
+
+        const student1 = new Student('anastasia', 70);
+        const student2 = new Student('lasha', 50);
+        const student3 = new Student('gio', 30);
+
+        const arr = [];
+        arr.push(student1, student2, student3);
+
+        arr.forEach(student => {
+            if (student.score > 50) {
+                console.log('გადალახა');
+            } else {
+                console.log('ვერ გადალახა')
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!-- // დავალება 2:
+// შექმენი კლასი სახელად Car, რომელსაც ექნება მარკა, მოდელი და წელი. დაამატე მეთოდი getAge(), რომელიც გამოითვლის რამდენი წლისაა მანქანა 2025 წელთან შედარებით. შექმენი რამდენიმე ობიექტი ამ კლასიდან და გამოიყენე forEach, რომ დაბეჭდო თითოეული მანქანის ასაკი. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Car {
+            constructor(model, year) {
+                this.model = model;
+                this.year = year;
+            }
+
+            getAge() {
+                console.log(2025 - this.year);
+            }
+        }
+        const toyota = new Car('prius',2020)
+        console.log(toyota)
+        toyota.getAge()
+    </script>
+</body>
+
+</html>

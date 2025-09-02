@@ -1,0 +1,26 @@
+<!-- // დავალება 1:
+// შექმენი კონსტრუქტორი ფუნქცია, რომელიც ქმნის წიგნის ობიექტს სათაურით, ავტორითა და გვერდების რაოდენობით. შემდეგ შექმენი 3 სხვადასხვა წიგნის ობიექტი ამ კონსტრუქტორის გამოყენებით და დაამატე ისინი მასივში. გამოიყენე forEach, რომ დაბეჭდო თითოეული წიგნის ინფორმაცია სტილში: "წიგნი: [სათაური], ავტორი: [ავტორი]". -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function book(title, auther, pages) {
+            this.title = title
+            this.auther = auther
+            this.pages = pages
+        }
+        const book1 = new book('პრინცესა ანაბელი', '..', 129)
+        const book2 = new book('მოკლე კატოს თავგადასავალი', '..', 129)
+        const book3 = new book('პატარა პრინცი', '..', 129)
+        console.log(book1,book2,book3)
+    </script>
+</body>
+
+</html>

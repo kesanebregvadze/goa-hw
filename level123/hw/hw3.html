@@ -1,0 +1,23 @@
+<!-- // 3) შექმენი მასივი, რომელშიც განთავსდება სხვადასხვა სახის სტრინგები. შემდეგ, გამოიყენე forEach, რათა თითოეულ სტრინგს დაემატოს მინიმუმ 2 სიმბოლო (მაგალითად, დამატება "!!" თითოეულ სტრინგზე).
+// მაგალითი: const strings = ["apple", "banana", "orange"]; -- > // შედეგი: ["apple!!", "banana!!", "orange!!"] -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const str = ["apple", "banana", "orange"]
+        const result = []
+        str.forEach(str => {
+            result.push((str + '!!'))
+        })
+        console.log(result)
+    </script>
+</body>
+
+</html>
